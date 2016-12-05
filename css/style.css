@@ -1,0 +1,227 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+a{
+  text-decoration: none;
+}
+
+@font-face {
+	font-family: 'Waters Gothic';
+	src: url('WatGoth1.eot');
+	src: url('WatGoth1.eot?#iefix') format('embedded-opentype'),
+		url('WatGoth1.woff') format('woff'),
+		url('WatGoth1.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Nueva Std';
+	src: url('NuevaStd-Cond.eot');
+	src: url('NuevaStd-Cond.eot?#iefix') format('embedded-opentype'),
+		url('NuevaStd-Cond.woff') format('woff'),
+		url('NuevaStd-Cond.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.background{
+position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../img/sfondo.png');
+  background-position: center center;
+  background-origin: content-box;
+  background-size: cover;
+  background-attachment: fixed;
+  z-index: -2;
+}
+
+.lighting {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../img/sfondo.png');
+  background-position: center center;
+  background-origin: content-box;
+  background-size: cover;
+  background-attachment: fixed;
+  -webkit-filter: brightness(70);
+  filter: brightness(70);
+  -o-filter: brightness(70);
+  -moz-filter: brightness(70);
+  z-index: -1;
+  opacity: 0;
+}
+
+.flashit {
+-webkit-animation: flash ease-out 4s 0s 2;
+-moz-animation: flash ease-out 4s 0s 2;
+animation: flash ease-out 4s 0s 2;
+animation-duration: 6s 2;
+}
+
+
+
+@-webkit-keyframes flash {
+	from { opacity: 0; }
+  80% { opacity: 0; }
+	82% { opacity: 0.6; }
+  86% { opacity: 0.2; }
+  90% { opacity: 0.9; }
+	to { opacity: 0; }
+}
+
+@keyframes flash {
+  from { opacity: 0; }
+  80% { opacity: 0; }
+	82% { opacity: 0.6; }
+  86% { opacity: 0.2; }
+  90% { opacity: 0.9; }
+	to { opacity: 0; }
+}
+
+.logo{
+  color: white;
+  text-align: center;
+}
+
+.logo h1{
+  font-family: 'Waters Gothic';
+  font-size: 5em;
+  display: inline;
+}
+
+.blood{
+  position: absolute;
+  width: 100%;
+  top: 0 !important;
+}
+
+/* ===== s: Header ======*/
+
+.main_content{
+  position: absolute;
+  margin: 0 auto;
+  width: 60%;
+  height: 40%;
+  top: 45%;
+  left: 23%;
+  color: white;
+  overflow: hidden;
+  font-family: 'Nothing You Could Do', cursive;
+  font-size: 2em;
+  line-height: 1.8em;
+}
+
+.paragraph{
+  position: absolute;
+  top: 0; right: 0;
+  bottom: 0; left: 0;
+  opacity: 0;
+  transition: 4s;
+  transform-origin: center center;
+  transform: scale(1,1);
+  animation-fill-mode: forwards;
+  animation: 13s intro linear;
+}
+
+.paragraph:nth-child(1){
+  animation-delay: 10s;
+}
+
+.paragraph:nth-child(2){
+  animation-delay: 23s;
+}
+
+.paragraph:nth-child(3){
+  animation-delay: 36s;
+}
+
+@keyframes intro {
+  0% {
+    background-position: -100% center;
+    transform: scale(.7,.7);
+    opacity: 0;
+    }
+  50% {
+    background-position: center center;
+    transform: scale(.9,.9);
+    }
+  80% {
+    background-position: center center;
+    opacity: 1;
+    }
+  100% {
+    background-position: 150% center;
+    transform: scale(1,1);
+    opacity: 0;
+    }
+  }
+
+  .btn_Start{
+    position: absolute;
+    margin-left: 28%;
+    padding: 0 70px;
+    height: 120px;
+    opacity: 0;
+    top: 0; right: 0;
+    bottom: 0; left: 0;
+    top: 0;
+    border: none;
+    font-family: 'Waters Gothic';
+    font-size: 3em;
+    color: white;
+    background-color: rgba(119, 20, 20, 0.8);
+    transition: 4s;
+    transform-origin: center center;
+    transform: scale(1,1);
+    animation-fill-mode: forwards;
+    animation: 3s move_button linear;
+    animation-delay: 50s;
+  }
+
+  @keyframes move_button {
+    0% {
+      background-position: -100% center;
+      transform: scale(.7,.7);
+      opacity: 0;
+      }
+    50% {
+      background-position: center center;
+      transform: scale(.9,.9);
+      }
+    80% {
+      background-position: center center;
+      opacity: 1;
+      }
+    100% {
+      background-position: 150% center;
+      transform: scale(1,1);
+      opacity: 1;
+      }
+    }
+
+  .fa{
+    background-color: white;
+    border-radius: 10%;
+    padding: 8px;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 2%;
+    margin-left: 2%;
+  }
+
+  .fa-volume-off{
+    display: none;
+  }
